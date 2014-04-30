@@ -3,7 +3,7 @@ import os
 
 version = '1.0'
 
-setup(name='uvc.api',
+setup(name='uvc.plone',
       version=version,
       description="",
       long_description=open("README.txt").read() + "\n" +
