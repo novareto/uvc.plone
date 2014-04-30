@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           xmlns:grok="http://namespaces.zope.org/grok">
+
+      <include zcml:condition="installed grok" package="grok" />
+      <include zcml:condition="installed five.grok" package="five.grok" />
+      <include zcml:condition="installed five.grok" package="grokcore.chameleon" />
+      <include zcml:condition="installed zeam.form.plone" package="zeam.form.plone"/>
+      <include zcml:condition="installed five.grok" package="grokcore.layout"/>
+      <grok:grok package="." />
+
+</configure>
+
