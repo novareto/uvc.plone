@@ -1,13 +1,19 @@
+# -*- coding: utf-8 -*-
+
 import logging
-logger = logging.getLogger('uvc.api')
+from grokcore.component import zcml
+
+
+logger = logging.getLogger('uvc.plone')
+
 
 def log(message, summary='', severity=logging.INFO):
     logger.log(severity, '%s %s', summary, message)
 
 
 def skip_tests_path(name):
-    return name in ['tests', 'ftests', 'testing', 'uvcsite_registrations', 'plone_registrations']
+    return name in ['tests', 'ftests', 'testing',
+                    'uvcsite_registrations', 'plone_registrations']
 
-from grokcore.component import zcml
+
 zcml.skip_tests = skip_tests_path
-

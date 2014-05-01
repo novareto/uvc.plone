@@ -23,12 +23,8 @@ setup(name='uvc.plone',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
-      ],
-      extras_require={
-                  'plone': ['five.grok', 'zeam.form.plone', 'grokcore.layout'],
-      },
-      entry_points={
-         'z3c.autoinclude.plugin': 'target=uvcsite', 
-      }
+          'five.grok',
+          'zeam.form.plone',
+          'grokcore.layout'
+          ],
       )
