@@ -2,6 +2,7 @@
 # Copyright (c) 2007-2011 NovaReto GmbH
 # cklinger@novareto.de
 
+from zope import interface
 from five.grok import View
 from five import grok
 from zope.publisher.publish import mapply
@@ -17,7 +18,7 @@ from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 grok.templatedir('templates')
 
 
-class Layout(Layout):
+class Layout(BaseLayout):
     grok.name('layout')
     grok.context(interface.Interface)
 
