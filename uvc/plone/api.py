@@ -4,6 +4,7 @@
 
 from zope import interface
 from five.grok import View
+from five.grok import Viewlet
 from five import grok
 from zope.publisher.publish import mapply
 from zeam.form.plone import Form
@@ -41,4 +42,4 @@ class FormMacros(grok.View):
     grok.context(interface.Interface)
 
 
-__all__ = ['Layout', 'Form', 'Page', 'IPrincipal', 'get_principal']
+__all__ = ['Viewlet', 'Layout', 'Form', 'Page', 'IPrincipal', 'get_principal']
