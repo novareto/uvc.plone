@@ -42,4 +42,4 @@ class FormMacros(grok.View):
     grok.context(interface.Interface)
 
 
-__all__ = ['Viewlet', 'Layout', 'Form', 'Page', 'IPrincipal', 'get_principal']
+__all__ = ['Fields', 'action', 'Viewlet', 'Layout', 'Form', 'Page', 'IPrincipal', 'get_principal']
