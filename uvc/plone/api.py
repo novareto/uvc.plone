@@ -3,9 +3,9 @@
 # cklinger@novareto.de
 
 from zope import interface
-from five.grok import View
-from five.grok import Viewlet
+from five.grok import View, Viewlet
 from five import grok
+from plone.api import portal
 from zope.publisher.publish import mapply
 from zeam.form.plone import Form
 from zeam.form.base import Fields, action
@@ -30,8 +30,18 @@ def get_principal(context, request):
     return portal_state.member().getUser()
 
 
+class View(View):
+    grok.baseclass()
+
+    def getApplication(self):
+        return portal.get()
+
+
 class Form(Form):
     grok.baseclass()
+
+    def getApplication(self):
+        return portal.get()
 
 
 class FormTemplate(pt.PageTemplate):
