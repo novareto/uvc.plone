@@ -25,7 +25,7 @@ setup(name='uvc.plone',
           'setuptools',
           'five.grok',
           'zeam.form.plone',
-          'grokcore.layout'
+          'grokcore.layout',
           'plone.api',
           ],
       )
