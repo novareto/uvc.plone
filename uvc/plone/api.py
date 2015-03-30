@@ -7,13 +7,16 @@ from five.grok import View, Viewlet
 from five import grok
 from plone.api import portal
 from zope.publisher.publish import mapply
-from zeam.form.plone import Form
-from zeam.form.base import Fields, action
+from zeam.form.plone import PloneForm, Form
+from zeam.form.composed import SubForm
+from zeam.form.composed import view
+from zeam.form.base import Fields, action, Action, SUCCESS, FAILURE, Actions
 from zope.component import getMultiAdapter
 from AccessControl.interfaces import IUser as IPrincipal
 from grokcore.layout import Layout as BaseLayout, Page
 from megrok import pagetemplate as pt
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
+from zeam.form.layout.form import ComposedForm
 
 
 grok.templatedir('templates')
@@ -42,6 +45,14 @@ class Form(Form):
 
     def getApplication(self):
         return portal.get()
+
+
+class ComposedForm(ComposedForm, PloneForm):
+    grok.baseclass()
+
+
+class SubForm(SubForm, PloneForm):
+    grok.baseclass()
 
 
 class FormTemplate(pt.PageTemplate):

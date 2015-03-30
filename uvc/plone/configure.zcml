@@ -5,7 +5,10 @@
       <include package="five.grok" />
       <include package="grokcore.chameleon" />
       <include package="zeam.form.plone" />
+      <include package="zeam.form.composed" />
       <include package="grokcore.layout" />
+      <include package="nva.captchawidget" />
+
       <grok:grok package="." />
 
 </configure>
