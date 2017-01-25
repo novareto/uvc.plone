@@ -2,13 +2,19 @@
            xmlns:zcml="http://namespaces.zope.org/zcml"
            xmlns:grok="http://namespaces.zope.org/grok">
 
-      <include package="five.grok" />
-      <include package="grokcore.chameleon" />
-      <include package="zeam.form.plone" />
-      <include package="zeam.form.composed" />
-      <include package="grokcore.layout" />
-      <include package="nva.captchawidget" />
-
-      <grok:grok package="." />
-
+  <include package="five.grok" />
+  <include package="grokcore.chameleon" />
+  <include package="zeam.form.plone" />
+  <include package="zeam.form.composed" />
+  <include package="grokcore.layout" />
+  <include package="nva.captchawidget" />
+  
+  <grok:grok package="." />
+  
+  <plone:static
+      directory="static"
+      type="plone"
+      name="uvc.plone"
+      />
+  
 </configure>
