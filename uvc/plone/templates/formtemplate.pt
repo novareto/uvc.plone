@@ -10,7 +10,7 @@
   </div>
 
   <div metal:fill-slot="main">
-
+   <div class="container">
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
     <h1 class="documentFirstHeading"
@@ -75,7 +75,7 @@
     </form>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
-
+  </div>
   </div>
 
 </html>

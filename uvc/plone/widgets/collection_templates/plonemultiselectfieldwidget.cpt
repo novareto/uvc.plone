@@ -1,7 +1,10 @@
 <script language="Javascript">
-  $(document).ready(function() {
-      $('<tal:id replace="widget.htmlId()" />').multiSelect();
-  }
+require([
+   'jquery',
+   '++plone++uvc.plone/multiselect/js/jquery.multi-select.js'
+   ], function($) {
+   $('<tal:id replace="'#' + widget.htmlId()" />').multiSelect();
+});
 </script>
 <tal:widget>
   <select id="#" name="#" class="#" multiple="multiple"
