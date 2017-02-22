@@ -1,9 +1,9 @@
 <script language="Javascript">
 require([
-   'jquery',
+   'jquery', 'jquery-ui/widgets/sortable',
    '++plone++uvc.plone/multiselect/js/jquery.multi-select.js'
    ], function($) {
-   $('<tal:id replace="'#' + widget.htmlId()" />').multiSelect();
+   $('<tal:id replace="'#' + widget.htmlId()" />').sortable().multiSelect();
 });
 </script>
 <tal:widget>
