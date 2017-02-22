@@ -1,9 +1,16 @@
 <script language="Javascript">
-require([
-   'jquery', 'jquery-ui/widgets/sortable',
+
+require.config({
+    "paths": {
+      "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui"
+    }
+    });
+    
+  require([
+   'jquery', 'jquery-ui',
    '++plone++uvc.plone/multiselect/js/jquery.multi-select.js'
    ], function($) {
-   $('<tal:id replace="'#' + widget.htmlId()" />').sortable().multiSelect();
+   $('<tal:id replace="'#' + widget.htmlId()" />').multiSelect({sortable: true}).sortable();
 });
 </script>
 <tal:widget>
