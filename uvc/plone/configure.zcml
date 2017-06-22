@@ -14,22 +14,4 @@
   
   <grok:grok package="." />
 
-  <browser:resourceDirectory
-      name="uvc.plone"
-      directory="./static" />
-
-  <plone:static
-      directory="static"
-      type="plone"
-      name="uvc.plone"
-      />
-
-  <genericsetup:registerProfile
-     name="default"
-     title="UVC Plone5 AddOns"
-     directory="profiles/default"
-     description="UVC Plone5 AddOns"
-     provides="Products.GenericSetup.interfaces.EXTENSION"
-     />
-  
 </configure>
