@@ -1,5 +1,6 @@
 recursive-include main_directory *
 recursive-include uvc *.zcml
+recursive-include uvc/plone/templates *
 recursive-include docs *
 include *
 global-exclude *.pyc
