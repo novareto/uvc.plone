@@ -79,3 +79,58 @@
 </form>
 
 
+<span metal:define-macro="bootstrapfields">
+	<div class="form-group">
+		<label style="display: inline; font-size:110%;"
+			class="control-label" for="#"
+			tal:attributes="for widget/htmlId"
+			tal:content="widget/title">
+			Label
+		</label>
+		<span class="field-required"
+			tal:condition="widget/required">*</span>
+		<br />
+		<tal:description tal:condition="widget/description">
+			<span class="field-description" tal:content="widget/description"> </span> i
+			<br />
+			</tal:description>
+			<tal:error tal:define="error widget/error" tal:condition="error">
+				<span style="color:red;" class="field-error" tal:content="error/title"> Error </span>
+				<br />
+				</tal:error>
+				<tal:widget tal:content="structure widget/render" />
+			</div>
+		</span>
+
+
+		<span metal:define-macro="bootstrapcheckbox">
+			<div class="form-group">
+				<div class="col-md-1">
+					<tal:widget tal:content="structure widget/render" />
+				</div>
+				<div class="col-md-11">
+					<label style="display: inline; font-size:110%;"
+						class="control-label" for="#"
+						tal:attributes="for widget/htmlId"
+						tal:content="widget/title">
+						Label
+					</label>
+					<span class="field-required"
+						tal:condition="widget/required">*</span>
+					<br />
+					<tal:description tal:condition="widget/description">
+						<span class="field-description"
+							tal:content="widget/description">
+						</span><br />
+						</tal:description>
+						<tal:error tal:define="error widget/error"
+							tal:condition="error">
+							<span class="field-error"
+								tal:content="error/title">
+								Error
+							</span>
+							<br />
+							</tal:error>
+						</div>
+					</div>
+				</span>
