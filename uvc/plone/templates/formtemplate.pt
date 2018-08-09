@@ -2,13 +2,6 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="zeam-form-plone">
 
-  <div metal:fill-slot="top_slot">
-    <tal:border tal:condition="not:view/plonePageBorder">
-      <tal:disable
-         tal:define="dummy python:request.set('disable_border', 1)" />
-    </tal:border>
-  </div>
-
   <div metal:fill-slot="main">
    <div class="container">
     <div tal:replace="structure provider:plone.abovecontenttitle" />
