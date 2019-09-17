@@ -28,8 +28,6 @@ setup(name='uvc.plone',
 	  'zeam.form.composed',
           'zeam.form.layout',
           'grokcore.layout',
-          'nva.captchawidget',
-          'grokcore.layout',
           'plone.api',
           ],
       )
