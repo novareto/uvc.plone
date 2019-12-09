@@ -2,9 +2,9 @@
 
 from five import grok
 from zope.interface import Interface
-from zope.schema import List, Choice
+from zope.schema import List, Choice, TextLine
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from .api import Form, Fields
+from .api import Form, Fields, action
 
 
 TEST = SimpleVocabulary((
@@ -17,10 +17,11 @@ TEST = SimpleVocabulary((
 
 class ITestList(Interface):
 
-    toto = List(
-        title=u"test",
-        value_type=Choice(vocabulary=TEST),
-        required=True)
+    name = TextLine(
+        title=u"Name",
+        description="DESCRIPTION"
+    )
+
 
 
 class TestForm(Form):
@@ -31,4 +32,9 @@ class TestForm(Form):
     ignoreContent = True
     ignoreRequest = True
 
-    fields['toto'].mode = 'INOUT'
+    @action(u'Speichern')
+    def handle_save(self):
+        data, errors = self.extractData()
+        print(data)
+        print(errors)
+
